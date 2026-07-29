@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khalifa Alblooshi — AI Student</title>
+<meta name="description" content="Khalifa Alblooshi — Final-year BSc Computer Science (AI) student at The British University in Dubai. Seeking AI/ML internship in Abu Dhabi.">
+<style>
+  :root {
+    --ink: #1d1d1f;
+    --ink-2: #6e6e73;
+    --ink-3: #86868b;
+    --bg: #ffffff;
+    --bg-2: #f5f5f7;
+    --accent: #0071e3;
+    --radius: 18px;
+    --maxw: 980px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  ::selection { background: rgba(0,113,227,.18); }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background: rgba(255,255,255,.72);
+    border-bottom: 1px solid rgba(0,0,0,.06);
+  }
+  .nav-inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 22px;
+    height: 52px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-name { font-weight: 600; font-size: 15px; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 26px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; font-size: 13px; transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+  @media (max-width: 640px) { .nav-links { gap: 16px; } .nav-links a:nth-child(2) { display:none; } }
+
+  section { padding: 110px 22px; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; }
+
+  /* Hero */
+  .hero { padding: 150px 22px 130px; text-align: center; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--ink-2);
+    border: 1px solid rgba(0,0,0,.12); border-radius: 999px;
+    padding: 6px 14px; margin-bottom: 28px; background: var(--bg);
+  }
+  .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #30d158; }
+  h1 {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: clamp(44px, 8vw, 76px);
+    font-weight: 700; letter-spacing: -.025em; line-height: 1.05;
+  }
+  .hero h1 span { color: var(--ink-3); }
+  .hero .sub {
+    max-width: 640px; margin: 26px auto 0;
+    font-size: clamp(17px, 2.4vw, 21px); color: var(--ink-2); font-weight: 400;
+  }
+  .cta-row { margin-top: 38px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; text-decoration: none; font-size: 16px; font-weight: 500;
+    padding: 12px 26px; border-radius: 999px; transition: all .25s ease;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #0077ed; transform: translateY(-1px); }
+  .btn-ghost { color: var(--accent); border: 1px solid rgba(0,113,227,.35); }
+  .btn-ghost:hover { background: rgba(0,113,227,.06); }
+
+  /* Section headings */
+  .kicker { font-size: 14px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
+  h2 {
+    font-size: clamp(30px, 4.5vw, 44px); font-weight: 700; letter-spacing: -.02em; line-height: 1.1;
+    margin-bottom: 18px;
+  }
+  .lede { font-size: 18px; color: var(--ink-2); max-width: 640px; }
+
+  /* About */
+  .about { background: var(--bg-2); }
+  .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: start; margin-top: 8px; }
+  @media (max-width: 780px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .about p { font-size: 17px; color: var(--ink-2); margin-bottom: 16px; }
+  .about p strong { color: var(--ink); font-weight: 600; }
+  .fact-card {
+    background: var(--bg); border-radius: var(--radius); padding: 28px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+  }
+  .fact { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,.06); font-size: 15px; }
+  .fact:last-child { border-bottom: none; }
+  .fact .k { color: var(--ink-3); }
+  .fact .v { font-weight: 500; text-align: right; }
+
+  /* Education */
+  .edu-item {
+    display: grid; grid-template-columns: 160px 1fr; gap: 28px;
+    padding: 34px 0; border-top: 1px solid rgba(0,0,0,.08);
+  }
+  .edu-item:last-child { border-bottom: 1px solid rgba(0,0,0,.08); }
+  @media (max-width: 640px) { .edu-item { grid-template-columns: 1fr; gap: 6px; } }
+  .edu-date { color: var(--ink-3); font-size: 15px; padding-top: 3px; }
+  .edu-item h3 { font-size: 20px; font-weight: 600; letter-spacing: -.01em; }
+  .edu-item .school { color: var(--ink-2); font-size: 16px; margin-top: 2px; }
+  .edu-item .detail { color: var(--ink-2); font-size: 15px; margin-top: 10px; }
+  .pill-highlight {
+    display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600;
+    color: #b25000; background: #fff3e3; padding: 5px 12px; border-radius: 999px;
+  }
+
+  /* Projects */
+  .projects { background: var(--bg-2); }
+  .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 44px; }
+  @media (max-width: 720px) { .proj-grid { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--bg); border-radius: var(--radius); padding: 30px;
+    text-decoration: none; color: var(--ink); display: block;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.09); }
+  .card .tags { font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+  .card h3 { font-size: 21px; font-weight: 600; letter-spacing: -.015em; margin: 10px 0 8px; }
+  .card p { font-size: 15px; color: var(--ink-2); }
+  .card .link { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 500; color: var(--accent); }
+  .card.feature { grid-column: 1 / -1; }
+
+  /* Skills */
+  .skill-group { margin-top: 36px; }
+  .skill-group h3 { font-size: 14px; font-weight: 600; color: var(--ink-3); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 14px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    font-size: 15px; font-weight: 500; padding: 9px 18px; border-radius: 999px;
+    background: var(--bg-2); color: var(--ink);
+  }
+  .chip.hot { background: var(--ink); color: #fff; }
+
+  /* Contact */
+  .contact { background: var(--ink); color: #f5f5f7; text-align: center; }
+  .contact h2 { color: #fff; }
+  .contact .lede { margin: 0 auto; color: #a1a1a6; }
+  .contact .cta-row { margin-top: 34px; }
+  .contact .btn-ghost { color: #fff; border-color: rgba(255,255,255,.35); }
+  .contact .btn-ghost:hover { background: rgba(255,255,255,.08); }
+  .contact-links { margin-top: 40px; display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+  .contact-links a { color: #a1a1a6; text-decoration: none; font-size: 14px; transition: color .2s; }
+  .contact-links a:hover { color: #fff; }
+
+  footer { background: var(--ink); color: #6e6e73; text-align: center; padding: 26px 22px 40px; font-size: 12px; border-top: 1px solid rgba(255,255,255,.09); }
+
+  /* Reveal animation */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Khalifa Alblooshi</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="badge reveal"><span class="dot"></span>Available for internship — Abu Dhabi, UAE</div>
+    <h1 class="reveal">Khalifa Alblooshi.<br><span>Building with AI.</span></h1>
+    <p class="sub reveal">Final-year BSc Computer Science (Artificial Intelligence) student at The British University in Dubai. UK-trained, Distinction graduate, hands-on with machine learning, robotics, and data.</p>
+    <div class="cta-row reveal">
+      <a class="btn btn-primary" href="#projects">View my work</a>
+      <a class="btn btn-ghost" href="Khalifa_Alblooshi_CV.pdf" download>Download CV</a>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="kicker reveal">About</div>
+    <h2 class="reveal">Two education systems.<br>One focus: applied AI.</h2>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I began my computer science journey in the UK at the <strong>University of Essex International College</strong>, finishing my first year with <strong>Distinction (80% overall)</strong> — including 89% in Object-Oriented Programming.</p>
+        <p>I then transferred to <strong>The British University in Dubai</strong> to specialize in Artificial Intelligence, where my coursework spans machine learning, natural language processing, robotics with ROS, and AI search algorithms.</p>
+        <p>As an Emirati trained across both systems, I want to contribute to Abu Dhabi's fast-growing AI sector — and I'm ready to start now, with my university No-Objection Certificate already in hand.</p>
+      </div>
+      <div class="fact-card reveal">
+        <div class="fact"><span class="k">Degree</span><span class="v">BSc CS in AI</span></div>
+        <div class="fact"><span class="k">University</span><span class="v">BUiD, Dubai</span></div>
+        <div class="fact"><span class="k">Year 1 result</span><span class="v">Distinction (UK)</span></div>
+        <div class="fact"><span class="k">Location</span><span class="v">Abu Dhabi, UAE</span></div>
+        <div class="fact"><span class="k">Languages</span><span class="v">Arabic · English</span></div>
+        <div class="fact"><span class="k">Availability</span><span class="v">Immediate</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="kicker reveal">Education</div>
+    <h2 class="reveal">Foundation, then specialization.</h2>
+    <div class="edu-item reveal">
+      <div class="edu-date">2023 — 2026</div>
+      <div>
+        <h3>BSc Computer Science in Artificial Intelligence</h3>
+        <div class="school">The British University in Dubai — Dubai, UAE</div>
+        <div class="detail">Final term. Coursework: machine learning, natural language processing, robotics (ROS), Topics in AI (search algorithms), data visualization, software engineering.</div>
+      </div>
+    </div>
+    <div class="edu-item reveal">
+      <div class="edu-date">2022 — 2023</div>
+      <div>
+        <h3>International Year One in Computer Science</h3>
+        <div class="school">University of Essex International College (Kaplan International Pathways) — Colchester, UK</div>
+        <div class="detail">RQF Level 4 · 120 credits. Top marks: Object-Oriented Programming (89%), Introduction to Databases (85%), Mathematics for Computing (81%).</div>
+        <span class="pill-highlight">Pass with Distinction — 80%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="kicker reveal">Projects</div>
+    <h2 class="reveal">Work that ships.</h2>
+    <p class="lede reveal">University and personal projects — all on <a href="https://github.com/khalifa3isa" style="color:var(--accent);text-decoration:none;">GitHub</a>.</p>
+    <div class="proj-grid">
+      <a class="card feature reveal" href="https://github.com/khalifa3isa/Dubai_accident_data_Visualization" target="_blank" rel="noopener">
+        <div class="tags">JavaScript · Data Visualization</div>
+        <h3>Dubai Traffic Accident Data Visualization</h3>
+        <p>Interactive visualizations of Dubai traffic accident data, surfacing accident patterns and hotspots across the city — turning raw public data into insight.</p>
+        <span class="link">View on GitHub →</span>
+      </a>
+      <a class="card reveal" href="https://github.com/khalifa3isa" target="_blank" rel="noopener">
+        <div class="tags">ROS · Python</div>
+        <h3>Robotics Module Project</h3>
+        <p>Programmed and simulated robot behaviour using ROS (Robot Operating System) as part of the university robotics module.</p>
+        <span class="link">View on GitHub →</span>
+      </a>
+      <a class="card reveal" href="https://github.com/khalifa3isa" target="_blank" rel="noopener">
+        <div class="tags">Python · AI</div>
+        <h3>AI Search Algorithms</h3>
+        <p>Implemented and compared AI search algorithms for problem-solving tasks in the Topics in AI module.</p>
+        <span class="link">View on GitHub →</span>
+      </a>
+      <a class="card reveal" href="https://github.com/khalifa3isa/data_visualization_python" target="_blank" rel="noopener">
+        <div class="tags">Python · Jupyter</div>
+        <h3>Data Visualization in Python</h3>
+        <p>Data analysis and visualization notebooks built with Python's data stack in Jupyter.</p>
+        <span class="link">View on GitHub →</span>
+      </a>
+      <a class="card reveal" href="https://github.com/khalifa3isa/Hill-Top-Apartments-Group-5-" target="_blank" rel="noopener">
+        <div class="tags">Java · Teamwork</div>
+        <h3>Hill Top Apartments</h3>
+        <p>University group project in Java — OOP design and Git-based team collaboration.</p>
+        <span class="link">View on GitHub →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="kicker reveal">Skills</div>
+    <h2 class="reveal">The toolkit.</h2>
+    <div class="skill-group reveal">
+      <h3>AI & Machine Learning</h3>
+      <div class="chips">
+        <span class="chip hot">Python</span>
+        <span class="chip hot">Machine Learning</span>
+        <span class="chip hot">ROS</span>
+        <span class="chip hot">NLP</span>
+        <span class="chip">Optuna</span>
+        <span class="chip">AI Search Algorithms</span>
+        <span class="chip">Data Visualization</span>
+        <span class="chip">Jupyter</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h3>Programming</h3>
+      <div class="chips">
+        <span class="chip">Java</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">SQL</span>
+        <span class="chip">HTML / CSS</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h3>Tools & Languages</h3>
+      <div class="chips">
+        <span class="chip">Git & GitHub</span>
+        <span class="chip">VS Code</span>
+        <span class="chip">Arabic (native)</span>
+        <span class="chip">English (fluent)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="kicker reveal" style="color:#2997ff;">Contact</div>
+    <h2 class="reveal">Let's build something.</h2>
+    <p class="lede reveal">Seeking an AI/ML internship in Abu Dhabi. Available immediately, NOC in hand.</p>
+    <div class="cta-row reveal">
+      <a class="btn btn-primary" href="mailto:khalifa3isa@gmail.com">Email me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/khalifa-e-1428bb201" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="contact-links reveal">
+      <a href="mailto:khalifa3isa@gmail.com">khalifa3isa@gmail.com</a>
+      <a href="tel:+971502366222">+971 50 236 6222</a>
+      <a href="https://github.com/khalifa3isa" target="_blank" rel="noopener">github.com/khalifa3isa</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Khalifa Alblooshi · Abu Dhabi, United Arab Emirates</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
