@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khalifa Alblooshi — AI Student</title>
-<meta name="description" content="Khalifa Alblooshi — Final-year BSc Computer Science (AI) student at The British University in Dubai. Seeking AI/ML internship in Abu Dhabi.">
+<title>Khalifa Alblooshi — Artificial Intelligence</title>
+<meta name="description" content="Khalifa Alblooshi — BSc Computer Science (Artificial Intelligence) at The British University in Dubai, graduating January 2027. Seeking AI/ML roles in Abu Dhabi.">
 <style>
   :root {
     --ink: #1d1d1f;
@@ -43,7 +43,8 @@
   .nav-links { display: flex; gap: 26px; }
   .nav-links a { color: var(--ink-2); text-decoration: none; font-size: 13px; transition: color .2s; }
   .nav-links a:hover { color: var(--ink); }
-  @media (max-width: 640px) { .nav-links { gap: 16px; } .nav-links a:nth-child(2) { display:none; } }
+  @media (max-width: 720px) { .nav-links { gap: 15px; } .nav-links a:nth-child(3) { display:none; } }
+  @media (max-width: 560px) { .nav-links a:nth-child(2) { display:none; } }
 
   section { padding: 110px 22px; }
   .wrap { max-width: var(--maxw); margin: 0 auto; }
@@ -100,7 +101,7 @@
   .fact .k { color: var(--ink-3); }
   .fact .v { font-weight: 500; text-align: right; }
 
-  /* Education */
+  /* Timeline items (experience + education) */
   .edu-item {
     display: grid; grid-template-columns: 160px 1fr; gap: 28px;
     padding: 34px 0; border-top: 1px solid rgba(0,0,0,.08);
@@ -115,13 +116,18 @@
     display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600;
     color: #b25000; background: #fff3e3; padding: 5px 12px; border-radius: 999px;
   }
+  .pill-current {
+    display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600;
+    color: #0a6b2e; background: #e6f7ec; padding: 5px 12px; border-radius: 999px;
+  }
+  .experience { background: var(--bg-2); }
 
   /* Projects */
-  .projects { background: var(--bg-2); }
+  .projects { background: var(--bg); }
   .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 44px; }
   @media (max-width: 720px) { .proj-grid { grid-template-columns: 1fr; } }
   .card {
-    background: var(--bg); border-radius: var(--radius); padding: 30px;
+    background: var(--bg-2); border-radius: var(--radius); padding: 30px;
     text-decoration: none; color: var(--ink); display: block;
     box-shadow: 0 1px 3px rgba(0,0,0,.04);
     transition: transform .3s ease, box-shadow .3s ease;
@@ -134,12 +140,13 @@
   .card.feature { grid-column: 1 / -1; }
 
   /* Skills */
+  .skills { background: var(--bg-2); }
   .skill-group { margin-top: 36px; }
   .skill-group h3 { font-size: 14px; font-weight: 600; color: var(--ink-3); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 14px; }
   .chips { display: flex; flex-wrap: wrap; gap: 10px; }
   .chip {
     font-size: 15px; font-weight: 500; padding: 9px 18px; border-radius: 999px;
-    background: var(--bg-2); color: var(--ink);
+    background: var(--bg); color: var(--ink);
   }
   .chip.hot { background: var(--ink); color: #fff; }
 
@@ -168,6 +175,7 @@
     <a class="nav-name" href="#top">Khalifa Alblooshi</a>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
@@ -178,12 +186,12 @@
 
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="badge reveal"><span class="dot"></span>Available for internship — Abu Dhabi, UAE</div>
+    <div class="badge reveal"><span class="dot"></span>Seeking AI roles — Abu Dhabi, UAE</div>
     <h1 class="reveal">Khalifa Alblooshi.<br><span>Building with AI.</span></h1>
-    <p class="sub reveal">Final-year BSc Computer Science (Artificial Intelligence) student at The British University in Dubai. UK-trained, Distinction graduate, hands-on with machine learning, robotics, and data.</p>
+    <p class="sub reveal">Final-year BSc Computer Science (Artificial Intelligence) student at The British University in Dubai, graduating January 2027. UK-trained, Distinction graduate, hands-on with machine learning, robotics, and data — currently interning in IT at ICP, Al Ain.</p>
     <div class="cta-row reveal">
       <a class="btn btn-primary" href="#projects">View my work</a>
-      <a class="btn btn-ghost" href="Khalifa_Alblooshi_CV.pdf" download>Download CV</a>
+      <a class="btn btn-ghost" href="Khalifa_Alblooshi_CV.pdf" download="">Download CV</a>
     </div>
   </div>
 </header>
@@ -195,16 +203,35 @@
     <div class="about-grid">
       <div class="reveal">
         <p>I began my computer science journey in the UK at the <strong>University of Essex International College</strong>, finishing my first year with <strong>Distinction (80% overall)</strong> — including 89% in Object-Oriented Programming.</p>
-        <p>I then transferred to <strong>The British University in Dubai</strong> to specialize in Artificial Intelligence, where my coursework spans machine learning, natural language processing, robotics with ROS, and AI search algorithms.</p>
-        <p>As an Emirati trained across both systems, I want to contribute to Abu Dhabi's fast-growing AI sector — and I'm ready to start now, with my university No-Objection Certificate already in hand.</p>
+        <p>I then transferred to <strong>The British University in Dubai</strong> to specialize in Artificial Intelligence, where my coursework spans machine learning, natural language processing, robotics with ROS, databases and AI search algorithms.</p>
+        <p>I'm currently completing an internship in the IT section at the <strong>Federal Authority for Identity, Citizenship, Customs and Port Security (ICP)</strong> in Al Ain while I finish my degree — real experience inside a federal government technology environment.</p>
+        <p>As an Emirati trained across both systems, my goal is to work in <strong>artificial intelligence</strong> — and I'm looking for a full-time AI or machine learning role in Abu Dhabi from January 2027.</p>
       </div>
       <div class="fact-card reveal">
         <div class="fact"><span class="k">Degree</span><span class="v">BSc CS in AI</span></div>
         <div class="fact"><span class="k">University</span><span class="v">BUiD, Dubai</span></div>
+        <div class="fact"><span class="k">Graduating</span><span class="v">January 2027</span></div>
         <div class="fact"><span class="k">Year 1 result</span><span class="v">Distinction (UK)</span></div>
+        <div class="fact"><span class="k">Currently</span><span class="v">IT Intern — ICP</span></div>
+        <div class="fact"><span class="k">Seeking</span><span class="v">AI / ML roles</span></div>
         <div class="fact"><span class="k">Location</span><span class="v">Abu Dhabi, UAE</span></div>
         <div class="fact"><span class="k">Languages</span><span class="v">Arabic · English</span></div>
-        <div class="fact"><span class="k">Availability</span><span class="v">Immediate</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="wrap">
+    <div class="kicker reveal">Experience</div>
+    <h2 class="reveal">In the field.</h2>
+    <div class="edu-item reveal">
+      <div class="edu-date">Sep 2026 — Present</div>
+      <div>
+        <h3>IT Intern — Information Technology Section</h3>
+        <div class="school">Federal Authority for Identity, Citizenship, Customs and Port Security (ICP) — Al Ain, UAE</div>
+        <div class="detail">Day-to-day IT support for staff — diagnosing and resolving hardware, software, device and user account issues. Supporting network and infrastructure operations, including network connectivity, servers, and user account and permission administration.</div>
+        <span class="pill-current">Current internship</span>
       </div>
     </div>
   </div>
@@ -215,11 +242,11 @@
     <div class="kicker reveal">Education</div>
     <h2 class="reveal">Foundation, then specialization.</h2>
     <div class="edu-item reveal">
-      <div class="edu-date">2023 — 2026</div>
+      <div class="edu-date">2023 — 2027</div>
       <div>
         <h3>BSc Computer Science in Artificial Intelligence</h3>
         <div class="school">The British University in Dubai — Dubai, UAE</div>
-        <div class="detail">Final term. Coursework: machine learning, natural language processing, robotics (ROS), Topics in AI (search algorithms), data visualization, software engineering.</div>
+        <div class="detail">Graduating January 2027. Coursework: machine learning, natural language processing, robotics (ROS), Topics in AI (search algorithms), databases, data visualization, software engineering.</div>
       </div>
     </div>
     <div class="edu-item reveal">
@@ -274,12 +301,12 @@
   </div>
 </section>
 
-<section id="skills">
+<section class="skills" id="skills">
   <div class="wrap">
     <div class="kicker reveal">Skills</div>
     <h2 class="reveal">The toolkit.</h2>
     <div class="skill-group reveal">
-      <h3>AI & Machine Learning</h3>
+      <h3>AI &amp; Machine Learning</h3>
       <div class="chips">
         <span class="chip hot">Python</span>
         <span class="chip hot">Machine Learning</span>
@@ -292,7 +319,7 @@
       </div>
     </div>
     <div class="skill-group reveal">
-      <h3>Programming</h3>
+      <h3>Programming &amp; Databases</h3>
       <div class="chips">
         <span class="chip">Java</span>
         <span class="chip">JavaScript</span>
@@ -301,10 +328,21 @@
       </div>
     </div>
     <div class="skill-group reveal">
-      <h3>Tools & Languages</h3>
+      <h3>IT &amp; Infrastructure</h3>
       <div class="chips">
-        <span class="chip">Git & GitHub</span>
+        <span class="chip">IT Support</span>
+        <span class="chip">Troubleshooting</span>
+        <span class="chip">Networks</span>
+        <span class="chip">Servers</span>
+        <span class="chip">User Administration</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h3>Tools &amp; Languages</h3>
+      <div class="chips">
+        <span class="chip">Git &amp; GitHub</span>
         <span class="chip">VS Code</span>
+        <span class="chip">Microsoft Office</span>
         <span class="chip">Arabic (native)</span>
         <span class="chip">English (fluent)</span>
       </div>
@@ -316,7 +354,7 @@
   <div class="wrap">
     <div class="kicker reveal" style="color:#2997ff;">Contact</div>
     <h2 class="reveal">Let's build something.</h2>
-    <p class="lede reveal">Seeking an AI/ML internship in Abu Dhabi. Available immediately, NOC in hand.</p>
+    <p class="lede reveal">Seeking a full-time AI/ML role in Abu Dhabi. Graduating January 2027.</p>
     <div class="cta-row reveal">
       <a class="btn btn-primary" href="mailto:khalifa3isa@gmail.com">Email me</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/khalifa-a-1428bb201" target="_blank" rel="noopener">LinkedIn</a>
@@ -337,5 +375,6 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
+
 </body>
 </html>
