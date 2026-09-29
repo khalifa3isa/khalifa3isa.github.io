@@ -58,6 +58,13 @@
     padding: 6px 14px; margin-bottom: 28px; background: var(--bg);
   }
   .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #30d158; }
+  .avatar {
+    width: 148px; height: 148px; border-radius: 50%; object-fit: cover;
+    display: block; margin: 0 auto 30px;
+    border: 1px solid rgba(0,0,0,.09);
+    box-shadow: 0 6px 26px rgba(0,0,0,.10);
+  }
+  @media (max-width: 640px) { .avatar { width: 122px; height: 122px; margin-bottom: 24px; } }
   h1 {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: clamp(44px, 8vw, 76px);
@@ -186,6 +193,7 @@
 
 <header class="hero" id="top">
   <div class="wrap">
+    <img class="avatar reveal" src="profile.jpg" alt="Khalifa Alblooshi" width="148" height="148">
     <div class="badge reveal"><span class="dot"></span>Seeking AI roles — Abu Dhabi, UAE</div>
     <h1 class="reveal">Khalifa Alblooshi.<br><span>Building with AI.</span></h1>
     <p class="sub reveal">Final-year BSc Computer Science (Artificial Intelligence) student at The British University in Dubai, graduating January 2027. UK-trained, Distinction graduate, hands-on with machine learning, robotics, and data — currently interning in IT at ICP, Al Ain.</p>
